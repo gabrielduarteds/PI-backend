@@ -1,0 +1,87 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Corpo em Forma API",
+        "deion": "API Rest das funcionalidades da Corpo em Forma",
+        "version": "0.0.1"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000"
+            }
+],
+    "paths": {
+        "/planos": {
+            "deion": "Planos Corpo em Forma",
+            "get": {
+                "deion": "Lista os planos disponíveis",
+                "responses": {
+                    "200": {
+                        "deion": "Sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Planos"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/alunos": {},
+        "/alunos/{id}": {},
+        "/boletos": {},
+        "/boletos/{id}": {},
+        "/instrutores": {},
+        "/instrutores/{id}": {}
+    },
+    "components": {
+        "schemas": {
+            "Planos": {
+                "type": "object",
+                "properties": {
+                    "basico": {
+                        "type": "object",
+                        "properties": {
+                            "modalidades": {
+                                "type": "string",
+                                "example": "musculacao"
+                            },
+                            "preco": {
+                                "type": "string",
+                                "example": "89 reais"
+                            }
+                        }
+                    },
+                    "essential": {
+                        "type": "object",
+                        "properties": {
+                            "modalidades": {
+                                "type": "string",
+                                "example": "fit dance"
+                            },
+                            "preco": {
+                                "type": "string",
+                                "example": "99 reais"
+                            }
+                        }
+                            },
+                    "premium": {
+                        "type": "object",
+                        "properties": {
+                            "modalidades": {
+                                "type": "string",
+                                "example": "massagem"
+                            },
+                            "preco": {
+                                "type": "string",
+                                "example": "129 reais"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
